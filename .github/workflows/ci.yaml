@@ -19,7 +19,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
+          java-version: '17'
           distribution: 'temurin'
 
       - name: Install Maven
@@ -58,7 +58,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
+          java-version: '17'
           distribution: 'temurin'
 
       - name: Install Maven
@@ -133,14 +133,14 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
+          java-version: '17'
           distribution: 'temurin'
 
       - name: Install Maven
         run: sudo apt-get update && sudo apt-get install -y maven
 
       - name: Clear local Maven repository
-        run: rm -rf ~/.m2/repository/com/sentifraud/
+        run: rm -rf ~/.m2/repository/com/railstream/
 
       - name: Publish to GitHub Packages
         run: mvn deploy
