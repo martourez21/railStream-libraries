@@ -35,7 +35,23 @@
 
   <build>
     <plugins>
-
+      <plugin>
+        <groupId>org.apache.avro</groupId>
+        <artifactId>avro-maven-plugin</artifactId>
+        <version>${avro.version}</version>
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>schema</goal>
+            </goals>
+            <configuration>
+              <sourceDirectory>${project.basedir}/src/main/java/com/railstream/libraries/avro/</sourceDirectory>
+              <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <!-- Java Compiler Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
