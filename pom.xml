@@ -8,6 +8,12 @@
   <description>Java library for streaming components</description>
   <url>http://maven.apache.org</url>
 
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.4.3</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <avro.version>1.11.3</avro.version>
@@ -16,22 +22,16 @@
 
   <dependencies>
     <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
       <version>${avro.version}</version>
     </dependency>
   </dependencies>
-  <licenses>
-    <license>
-      <name>The MIT License</name>
-      <url>https://opensource.org/licenses/MIT</url>
-    </license>
-  </licenses>
-  <scm>
-    <url>https://github.com/martourez21/railstream-libraries</url>
-    <connection>scm:git:git://github.com/martourez21/railstream-libraries.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com:martourez21/railstream-libraries.git</developerConnection>
-  </scm>
 
   <build>
     <plugins>
@@ -52,13 +52,13 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>3.3.1</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
+<!--        <executions>-->
+<!--          <execution>-->
+<!--            <goals>-->
+<!--              <goal>jar</goal>-->
+<!--            </goals>-->
+<!--          </execution>-->
+<!--        </executions>-->
       </plugin>
     </plugins>
   </build>

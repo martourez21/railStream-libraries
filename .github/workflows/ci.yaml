@@ -64,6 +64,9 @@ jobs:
       - name: Install Maven
         run: sudo apt-get update && sudo apt-get install -y maven
 
+      - name: Generate sources from Avro schema
+        run: mvn clean install -DskipTests
+
       - name: Generate Javadocs
         run: mvn javadoc:javadoc
 
@@ -140,7 +143,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y maven
 
       - name: Clear local Maven repository
-        run: rm -rf ~/.m2/repository/com/railstream/
+        run: rm -rf ~/.m2/repository/com/sentifraud/
 
       - name: Publish to GitHub Packages
         run: mvn deploy
