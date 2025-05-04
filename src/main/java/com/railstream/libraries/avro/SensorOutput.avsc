@@ -1,0 +1,44 @@
+{
+  "type": "record",
+  "name": "SensorOutput",
+  "namespace": "com.railstream.libraries.schemas",
+  "doc": "Schema for processed sensor outputs (e.g., average temperatures)",
+  "fields": [
+    {
+      "name": "equipment_id",
+      "type": "string",
+      "doc": "Identifier of the equipment being monitored"
+    },
+    {
+      "name": "window_start",
+      "type": "long",
+      "doc": "Start of the time window in epoch milliseconds"
+    },
+    {
+      "name": "window_end",
+      "type": "long",
+      "doc": "End of the time window in epoch milliseconds"
+    },
+    {
+      "name": "average_temperature",
+      "type": "double",
+      "doc": "Calculated average temperature"
+    },
+    {
+      "name": "unit",
+      "type": "string",
+      "doc": "Unit of measurement"
+    },
+    {
+      "name": "sensor_count",
+      "type": "int",
+      "doc": "Number of sensors included in the calculation"
+    },
+    {
+      "name": "location",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Location of the equipment (if available)"
+    }
+  ]
+}

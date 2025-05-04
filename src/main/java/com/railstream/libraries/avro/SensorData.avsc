@@ -1,0 +1,46 @@
+{
+  "type": "record",
+  "name": "SensorData",
+  "namespace": "com.railstream.libraries.schemas",
+  "doc": "Schema for temperature sensor readings",
+  "fields": [
+    {
+      "name": "sensor_id",
+      "type": "string",
+      "doc": "Unique identifier of the sensor"
+    },
+    {
+      "name": "timestamp",
+      "type": "long",
+      "doc": "Epoch time in milliseconds (UTC)"
+    },
+    {
+      "name": "temperature",
+      "type": "double",
+      "doc": "Recorded temperature"
+    },
+    {
+      "name": "unit",
+      "type": "string",
+      "doc": "Unit of measurement (e.g., Celsius)"
+    },
+    {
+      "name": "location",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Sensor location metadata (name/code)"
+    },
+    {
+      "name": "latitude",
+      "type": ["null", "float"],
+      "default": null,
+      "doc": "Geolocation latitude (if available)"
+    },
+    {
+      "name": "longitude",
+      "type": ["null", "float"],
+      "default": null,
+      "doc": "Geolocation longitude (if available)"
+    }
+  ]
+}
